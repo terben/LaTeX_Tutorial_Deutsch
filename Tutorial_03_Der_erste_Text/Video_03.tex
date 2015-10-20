@@ -1,0 +1,23 @@
+% Ein erstes simples LaTeX Dokument zur Veranschaulichung der
+% LaTeX Präambel und zur Eingabe einfachen Textes.
+
+% In der LaTeX Präambel wird das zu ersttellende Dokument festgelegt
+% (die Dokumentklasse) und zusätzliche Optionen gesetzt.
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage[ngerman]{babel}   % Deutsche Einstellungen
+\usepackage[utf8]{inputenc}   % utf-8 Eingabe
+\usepackage[T1]{fontenc}      % Korrekte Behandlung von Sonderzeichen
+                              % in der Ergebnis PDF-Datei.
+\usepackage{csquotes}         % Für Anführungsstriche (Gänsefüßchen)
+
+
+% Alles innerhalb der Dokument Umgebung erscheint hinterher im
+% Ausgabedokument.
+\begin{document}
+Das ist unser erster Text in \LaTeX{}. Wir haben die Installation
+abgeschlossen und können jetzt endlich loslegen.
+
+% Hier beginnt ein neuer Absatz.
+Dies ist der zweite Absatz.
+\end{document}
