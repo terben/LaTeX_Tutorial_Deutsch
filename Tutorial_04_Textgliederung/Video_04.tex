@@ -1,0 +1,49 @@
+% Das Dokument verdeutlicht die Benutzung von Textgliederungselementen
+
+% Die Dokumentklasse bestimmt welche Textgliederungselemente zur
+% Verfügung stehen. Während zum Beispiel Abschnitte in allen Klassen
+% vorkommen gibt es Kapitel nur in Reports und Büchern.
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage[ngerman]{babel}   % Deutsche Einstellungen
+\usepackage[utf8]{inputenc}   % utf-8 Eingabe
+\usepackage[T1]{fontenc}      % Korrekte Behandlung von Sonderzeichen
+                              % in der Ergebnis PDF-Datei.
+\usepackage{csquotes}         % Für Anführungsstriche (Gänsefüßchen)
+
+% Festlegung von Titel, Autor und Dokumentdatum
+\title{Unser erstes \LaTeX{} Dokument}
+\author{Thomas Erben}
+\date{\today}
+
+\begin{document}
+%
+% Zu Anfang des Dokuments lassen wir uns Titel Inhaltsverzeichnis
+% ausgeben. Beachten Sie dass die Definition des Titels in der
+% Präambel noch nicht dazu führt dass dieser auch im Dokument erscheint!
+%
+\maketitle
+\tableofcontents
+% Falls Sie wollen dass das Inhaltsverzeichnis auf eine
+% eigene Seite kommt so entfernen Sie das Kommentarzeichen am
+% Anfang der nächsten Zeile:
+% \newpage
+%
+
+%
+% Wir fangen unseren Text mit einem Absatz an:
+\section{Erster Abschnitt}
+Das ist unser erster Text in \LaTeX{}. Wir haben die Installation abgeschlossen
+und können jetzt endlich loslegen.
+
+% Hier beginnt ein neuer Absatz.
+Dies ist der zweite Absatz.
+%
+% Dann noch ein Unterabschnitt
+\subsection{Ein Unterabschnitt}
+Neuer Text in einem Unterabschnitt.
+%
+% Und noch ein ganz neuer Abschnitt
+\section{Der nächste Abschnitt}
+Noch mehr Text.
+\end{document}
