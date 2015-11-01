@@ -1,0 +1,82 @@
+% Quelltext zu 'mathe_umgebungen.pdf'
+% Begleitmaterial zu Tutorial 10 des YouTube Video Tutorials (siehe
+% https://www.youtube.com/channel/UCgaFgieXi6HIryaFyhhzQtg) von Thomas
+% Erben
+%
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[ngerman]{babel}  % Deutsche Spracheinstellungen
+\usepackage[utf8]{inputenc}  % utf-8 Eingabeencoding 
+\usepackage[T1]{fontenc}     % Ausgabeencoding für Sonderzeichen
+\usepackage{csquotes}        % Für Anführungszeichen (Gänsefüßchen)
+
+% Die folgenden drei Pakete möchte man für Mathematik eigentlich
+% immer!
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\title{Demonstration Mathematischer Umgebungen}
+\author{Thomas Erben}
+\date{\today}
+%
+\begin{document}
+\maketitle
+
+%
+% Der folgende Text demonstriert die verschiedenen mathematischen Modi.
+% - $ ... $ fuer Formeln innerhalb des laufenden Textes
+% - \[ ... \] fuer vom Text abgesetzte Formeln
+% - \begin{equation} ... \end{equation} fuer vom Text abgesetzte Formeln
+%   mit fortlaufender Numerierung
+% - \begin{align} ... \end{align} fuer vom Text abgesetzte, mehrzeilige
+%   Formeln mit fortlaufender Numerierung. Die einzelnen Zeilen sehen so aus:
+%
+%   linker Formelteil 1 & = rechter Formelteil 1 \\
+%   linker Formelteil 2 & = rechter Formelteil 2 \nonumber \\
+%
+%   Das '&' steht hierbei vor dem Zeichen nach dem die Formeln
+%   ausgerichtet werden. Im Normalfall ist dies ein Leerzeichen.
+%   Ein '\nonumber' in einer der Zeilen heisst, dass diese Zeile nicht
+%   numeriert wird!
+\section{Die Summenformel von Gauss}
+Die Summe der Zahlen $1\ldots n$ berechnen wir mit einer bekannten Formel
+von Gauss mit $1+2+3+\ldots+n=\frac{n(n+1)}2$. Vom Text abgesetzt sieht 
+das Ganze so aus:
+%
+\[
+  1+2+3+\ldots+n=\frac{n(n+1)}2.
+\]
+Natürlich können wir Gleichungen auch Nummern geben:
+%
+\begin{equation}
+  1+2+3+\ldots+n=\frac{n(n+1)}2.
+\end{equation}
+%
+\section{Darstellungen der Eulerschen Zahl
+  $\mathrm{e}$}
+Diese Gleichungen werden dann automatisch fortlaufend numeriert, z. B. wenn wir
+die Eulersche Zahl $\mathrm{e}$ mit einer unendlichen Summe berechnen:
+%
+\begin{equation}
+  \mathrm{e}=\sum_{n=1}^{\infty}\frac 1{n!}.
+\end{equation}
+Eine andere Darstellung dieser Zahl ist:
+%
+\begin{equation}
+  \mathrm{e}=\lim_{n\to\infty}\left(1+\frac 1n\right)^n.
+\end{equation}
+Man beachte hier dass die Eulersche Zahl $\mathrm{e}$ in
+mathematischen Formeln \emph{aufrecht} gesetzt wird. Dies erreicht man
+im Quelltext mit \enquote{\texttt{\textbackslash mathrm\{e\}}}.
+%
+\section{Die Binomischen Formeln}
+Die drei binomischen Formeln lauten:
+%
+\begin{align}
+  (a+b)^2 & = a^2+2ab+b^2 \nonumber \\
+  (a-b)^2 & = a^2-2ab+b^2  \\
+  (a+b)\cdot(a-b) & = a^2-b^2 \nonumber
+\end{align}
+%
+\end{document}
