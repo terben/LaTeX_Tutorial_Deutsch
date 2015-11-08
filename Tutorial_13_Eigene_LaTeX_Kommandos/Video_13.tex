@@ -1,0 +1,75 @@
+% LaTeX Dokument zu Video 12 des YouTube LaTeX
+% Tutorials
+% (https://www.youtube.com/channel/UCgaFgieXi6HIryaFyhhzQtg)
+
+\documentclass[12pt,a4paper]{scrartcl}
+
+% LaTeX-Paket Definitionen
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% newcommand Definitionen:
+%
+% Abkürzungen für 'lange Zeichenketten'
+
+% Der lange LaTeX-Befehl \textbackslash 
+% erhält das Alias \tb.
+\newcommand{\tb}{\textbackslash}
+
+% Kommandos für den Mathematikmodus:
+
+% Definition des Befehls \imag für
+% eine korrekt gesetzte imaginäre Einheit
+\newcommand{\imag}{\mathrm{i}}
+
+% Definition des Befehls \euler für
+% eine korrekte gesetzte eulersche Zahl
+\newcommand{\euler}{\mathrm{e}}
+
+% Der Befehl abs nimmt ein Argument das
+% stets in korrekt grossen Absolutbetragstrichen
+% gesetzt wird.
+\newcommand{\abs}[1]{\left|#1\right|}
+
+% Der Befeh deriv setzt eine Ableitung in Bruchform
+% Erstes Argument gibt die abzuleitende Funktion, z.B.
+% \sin(x) und das zweite Argument die Variable
+% nach der abgeleitet wird.
+\newcommand{\deriv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+
+%
+\begin{document}
+%
+\section{\texttt{newcommand}-Beispiele}
+%
+%
+\subsection{Demonstration des \texttt{\tb tb}-Befehls}
+Meine Videos sind unter \texttt{C:\textbackslash
+Benutzer\textbackslash Thomas\textbackslash Videos}. \\
+Meine Videos sind unter \texttt{C:\tb Benutzer\tb Thomas\tb Videos}.
+%
+\subsection{Demonstration der \texttt{\tb euler} und
+\texttt{\tb imag} Befehle}
+\[
+  \mathrm{e}^{\mathrm{i}\varphi}=\cos(\varphi)+\mathrm{i}\sin(\varphi)
+  \quad
+  \euler^{\imag\varphi}=\cos(\varphi)+\imag\sin(\varphi)
+\]
+%
+\subsection{Demonstration des \texttt{\tb abs}-Befehls}
+\[
+  \left|a\right| \quad \left|\frac{a}{b}\right| \quad
+  \abs{a} \quad \abs{\frac{a}{b}}
+\]
+%
+\subsection{Demonstration des \texttt{\tb deriv}-Befehls}
+\[
+  \frac{\mathrm{d}\sin(x)}{\mathrm{d}x}=\cos(x) \quad
+  \deriv{\sin(x)}{x}=\cos(x)\quad
+  \deriv{}{x}\sin(x)=\cos(x)
+\]
+\end{document}
