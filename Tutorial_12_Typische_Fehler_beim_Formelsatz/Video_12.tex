@@ -1,5 +1,6 @@
 % Erweiterte Fassung des Vorführdokuments aus Video 12
-% des LaTeX Video Tutorials
+% des LaTeX Tutorials auf Youtube
+% (https://www.youtube.com/channel/UCgaFgieXi6HIryaFyhhzQtg)
 %
 \documentclass[11pt,a4paper]{scrartcl}
 
@@ -41,9 +42,9 @@ Bitte beachten Sie in der folgenden Formel:
   \sin(x)=0   \text{  mit  }  x= n\pi, n\in\mathbb{Z}.
 \]
 Bitte beachten Sie in der folgenden Formel, dass die imaginäre Einheit
-\enquote{$\mathrm{i}$} und die eulersche Zahl \enquote{$\mathrm{e}$} aufrecht mit dem
-Befehl \texttt{\textbackslash mathrm} zu setzen sind:\\
-\textbf{Falscher Formelsatz:} 
+\enquote{$\mathrm{i}$} und die eulersche Zahl \enquote{$\mathrm{e}$}
+aufrecht mit dem Befehl \texttt{\textbackslash mathrm} zu setzen sind:\\
+\textbf{Falscher Formelsatz:}
 \[
   e^{i\varphi}=\cos(\varphi)+i\sin(\varphi)
 \]
@@ -51,10 +52,10 @@ Befehl \texttt{\textbackslash mathrm} zu setzen sind:\\
 \[
   \mathrm{e}^{\mathrm{i}\varphi}=\cos(\varphi)+\mathrm{i}\sin(\varphi)
 \]
-Bitte beachten Sie in der folgenden Formel, dass der Differentialoperator
-\enquote{$\mathrm{d}$} aufrecht mit dem
+Bitte beachten Sie in der folgenden Formel, dass der
+Differentialoperator \enquote{$\mathrm{d}$} aufrecht mit dem
 Befehl \texttt{\textbackslash mathrm} zu setzen ist:\\
-\textbf{Falscher Formelsatz:} 
+\textbf{Falscher Formelsatz:}
 \[
   \left(\frac{d^{2}}{dr^{2}} + \frac{1}{r}\frac{d}{dr}\right)\psi(r)=h(r)
 \]
@@ -67,14 +68,16 @@ Befehl \texttt{\textbackslash mathrm} zu setzen ist:\\
 %
 \section{Zahlen und Einheiten im Mathematikmodus}
 %
-Verwenden Sie für \emph{alles} was mit physikalischen Zahlen und Einheiten
-zu tun hat das Paket \texttt{siunitx}. Im Folgenden sind
-die ersten drei Beispiele \emph{von Hand}, und verkehrt, gesetzt!
-Die Fehler sind: (1) Eine Zahl $3.0e03$ wurde direkt aus der Ausgabe eines Computerprogramms entnommen. Sie entspricht in keinster Weise
-Vorgaben für Zahlendarstellung in der Literatur; (2) Einheiten werden
-immer \emph{aufrecht} gesetzt; (3) Der Dezimaltrenner im Deutschen ist
-ein Komma und kein Punkt; (3) Zwischen Zahl und Abstand muss ein kleiner
-Abstand stehen. \texttt{siunitx} kümmert sich \emph{automatisch} um all diese Probleme!
+Verwenden Sie für \emph{alles} was mit physikalischen Zahlen und
+Einheiten zu tun hat das Paket \texttt{siunitx}. Im Folgenden sind die
+ersten drei Beispiele \emph{von Hand}, und verkehrt, gesetzt! Die
+Fehler sind: (1) Eine Zahl $3.0e03$ wurde direkt aus der Ausgabe eines
+Computerprogramms entnommen. Sie entspricht in keinster Weise Vorgaben
+für Zahlendarstellung in der Literatur; (2) Einheiten werden immer
+\emph{aufrecht} gesetzt; (3) Der Dezimaltrenner im Deutschen ist ein
+Komma und kein Punkt; (3) Zwischen Zahl und Abstand muss ein kleiner
+Abstand stehen. \texttt{siunitx} kümmert sich \emph{automatisch} um
+all diese Probleme!
 %
 \begin{center}
   \begin{tabular}{ll}
@@ -84,9 +87,11 @@ Abstand stehen. \texttt{siunitx} kümmert sich \emph{automatisch} um all diese P
     $l=\SI{3.0e03}{\kilo\meter}$ & richtig! \\
   \end{tabular}
 \end{center}
-In der ersten Version des folgenden Satzes sind Groß- und Kleinschreibweisen von Einheiten verkehrt (kilo=k, Mega=M, Hertz=Hz): \\
-Die Frequenz betrug nur $f=1.0 \mathrm{khz}$ anstatt der
-erwarteten $f=1.0 \mathrm{mhz}$. \\
+
+In der ersten Version des folgenden Satzes sind Groß- und
+Kleinschreibweisen von Einheiten verkehrt (kilo=k, Mega=M, Hertz=Hz): \\
+Die Frequenz betrug nur $f=1.0 \mathrm{khz}$ anstatt der erwarteten
+$f=1.0 \mathrm{mhz}$. \\
 Die Frequenz betrug nur $f=\SI{1.0}{\kilo\hertz}$ anstatt der
 erwarteten $f=\SI{1,0}{\mega\hertz}$. \\
 Auch um diese Probleme kümmert sich \texttt{siunitx} automatisch!
