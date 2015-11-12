@@ -1,0 +1,212 @@
+% Dieses LaTeX File demonstriert den Gebrauch des 'longtable'
+% Packets. Es ist Teil des Online Materials zu Video 15 des
+% LaTeX Tutorials auf YouTube
+%
+% ACHTUNG: Zur korrekten Übersetzung des Files muss der LaTeX
+% Kompiliervorgang wahrscheinlich mehrere Male (bis zu vier oder fuenf
+% mal) gestartet werden bis die Breite auf allen Seiten, die eine
+% longtable enthalten, korrekt ist! Sobald alles klappt bekommt man
+% beim Uebersetzen KEINE
+% ``Package longtable Warning: Column widths have changed''
+% Warnung mehr.
+%
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{siunitx}
+\sisetup{locale = DE}
+
+\usepackage{longtable}
+%
+\begin{document}
+%
+\section{Planetendaten}
+Alle für das Folgende notwendigen Daten über Planeten und
+Monde unseres Sonnensystems sind in Tabelle~\ref{tab:planetendaten}
+zusammengefasst.
+%
+% Eine 'longtable' hat eine sehr ähnliche Syntax Syntax wie eine normale
+% tabular Umgebung. Da sie für Tabellen gedacht ist, die länger als
+% eine Seite sind, gibt es zusätzliche Befehle fuer die Kopf- bzw. Fusszeilen
+% der Tabelle auf den einzelnen Seiten.
+%
+% Untenstehend sind die Befehlsgruppen, die die Kopf- und Fusszeilen
+% erzeugen in BLÖCKEN angegeben und erklärt. Man kann (muss) die
+% Kopfzeile für die erste Tabellenseite (Block schliesst
+% mit \endfirsthead ab), alle anderen Tabellenseiten (\endhead) und
+% die Fusszeilen fuer die letzte Seite (\endlastfoot) und alle anderen
+% Seiten (\endfoot) angeben.
+%
+% Wenn Sie intererssiert was geschieht wenn einzelne Blöcke nicht
+% anwesend sind, kommentieren Sie sie einfach aus und sehen Sie was geschieht.
+%
+% Die Tabellendeklaration ist ähnlich wie bei tabular, nur eben mit 
+% 'longtable'. 'longtable' integriert auch die caption und label
+% Befehle, also nicht die 'longtable' Ungebung nochmal in eine 'table'
+% Umgebung verpacken!
+%
+% Das 'S' in der 'longtable' Präambel stammt aus dem siunitx Paket
+% und sorgt für eine korrekte Setzung von Zahlen innerhalb der Tabelle.
+\begin{longtable}{|l|l|S|S|S|S|}
+  %
+  % Zuerst 'caption' und 'label' angeben falls gewünscht. Falls
+  % caption, label angegeben wird muss das mit '\\' abgeschlossen
+  % werden, sonst gibt's eine Fehlermeldung.
+  \captionabove[Daten des Sonnensystems]{Die Tabelle zeigt in den
+    ersten fünf Spalten Messdaten der Planeten und Monde unseres
+    Sonnensystems. Die letzte Spalte enthält die Bahngeschwindigkeit
+    um das jeweilige Zentralobjekt.}
+  \label{tab:planetendaten} \\
+  %
+  % BLOCK: Tabellenkopf auf der ersten Seite der Tabelle
+  %
+  % Der 'multicolumn' Befehl dient dazu einmalig mehrere Tabllenspalten zu einer
+  % zusammenzufassen. Der erste fasst die sieben Tabellenspalten zu einer
+  % zusammen und erzeugt so die Überschrift.
+  % Die restlichen sind ein 'Trick' um eine einmalige, andere Ausrichtung von
+  % Spalten zu bekommen. Die Erklärungstexte sollen zentriert erscheinen,
+  % die Daten selber so wie in der Tabellendeklaration oben.
+  \hline
+  \multicolumn{6}{|c|}{\textbf{Messdaten der Planeten und Monde}}\\
+  \hline
+  \multicolumn{1}{|c|}{Name} &  \multicolumn{1}{|c|}{Zentralobj.} &  
+    \multicolumn{1}{|c|}{Entf.}  & \multicolumn{1}{|c|}{Periode}  & 
+    \multicolumn{1}{|c|}{Inkl.}  & \multicolumn{1}{|c|}{Bahng.}  \\
+   &   &  \multicolumn{1}{|c|}{[x1000km]}  & \multicolumn{1}{|c|}{[Tage]}  &
+    \multicolumn{1}{|c|}{[Grad]}  & \multicolumn{1}{|c|}{[km/s]}  \\
+  \hline
+  \endfirsthead
+  %
+  % BLOCK: Tabellenkopf auf allen Seiten ausser auf der Ersten.
+  %
+  \hline
+  \multicolumn{1}{|c|}{Name} &  \multicolumn{1}{|c|}{Zentralobj.} &  
+    \multicolumn{1}{|c|}{Entf.}  & \multicolumn{1}{|c|}{Periode}  & 
+    \multicolumn{1}{|c|}{Inkl.}  & \multicolumn{1}{|c|}{Bahng.}  \\
+   &   &  \multicolumn{1}{|c|}{[x1000km]}  & \multicolumn{1}{|c|}{[Tage]}  &
+    \multicolumn{1}{|c|}{[Grad]}  & \multicolumn{1}{|c|}{[km/s]}  \\
+  \hline
+  \endhead
+  %
+  % BLOCK: Fusszeile(n) auf allen Seiten der Tabelle ausser auf der Letzten
+  %
+  \hline
+  \multicolumn{6}{|c|}{Fortsetzung folgt} \\
+  \hline
+  \endfoot
+  %
+  % BLOCK: Fusszeile(n) der Tabelle auf der letzten Seite
+  %
+  % Hier ist das einfach ein abschlissender Querstrich
+  \hline
+  \endlastfoot
+  %
+  % Ab hier stehen die Tabelleneinträge wie gewohnt:
+  Sonne &  \multicolumn{1}{|c|}{-} &  \multicolumn{1}{|c|}{-}  &
+  \multicolumn{1}{|c|}{-}  & \multicolumn{1}{|c|}{-}  &   \\
+  Merkur &  Sonne &  57910.00  & 87.97  & 7.00  & 47.85  \\
+  Venus &  Sonne &  108200.00  & 226.44  & 3.40  & 34.73  \\
+  Erde &  Sonne &  149570.00  & 365.22  & 0.00  & 29.77  \\
+  Mars &  Sonne &  227940.00  & 686.98  & 1.80  & 24.12  \\
+  Jupiter &  Sonne &  777764.00  & 4346.12  & 1.30  & 13.01  \\
+  Saturn &  Sonne &  1420915.00  & 10737.50  & 2.50  & 9.62  \\
+  Uranus &  Sonne &  2871744.00  & 30568.90  & 0.80  & 6.83  \\
+  Neptun &  Sonne &  4502057.00  & 59786.50  & 1.80  & 5.47  \\
+  Pluto &  Sonne &  5893058.00  & 90574.60  & 17.10  & 4.73  \\
+  Mond &  Erde &  384.40  & 27.30  & 5.15  & 1.02  \\
+  Phobos &  Mars &  9.38  & 0.32  & 1.00  & 2.14  \\
+  Deimos &  Mars &  23.45  & 1.26  & 1.80  & 1.35  \\
+  Metis &  Jupiter &  127.88  & 0.30  & 0.00  & 31.51  \\
+  Adrastea &  Jupiter &  128.93  & 0.30  & 0.00  & 31.45  \\
+  Amalthea &  Jupiter &  180.98  & 0.50  & 0.40  & 26.41  \\
+  Thebe &  Jupiter &  221.36  & 0.68  & 1.07  & 23.84  \\
+  Io &  Jupiter &  421.79  & 1.77  & 0.04  & 17.32  \\
+  Europa &  Jupiter &  670.07  & 3.55  & 0.47  & 13.72  \\
+  Ganymede &  Jupiter &  1069.43  & 7.15  & 0.20  & 10.87  \\
+  Callisto &  Jupiter &  1839.71  & 16.70  & 0.28  & 8.01  \\
+  Themisto &  Jupiter &  7508.41  & 130.00  & 43.00  & 4.20  \\
+  Leda &  Jupiter &  11172.90  & 239.00  & 26.10  & 3.40  \\
+  Himalia &  Jupiter &  11457.10  & 251.00  & 27.60  & 3.32  \\
+  Lysithea &  Jupiter &  11711.30  & 259.00  & 29.00  & 3.29  \\
+  Elara &  Jupiter &  11741.20  & 260.00  & 24.80  & 3.28  \\
+  S/2000\_J11 &  Jupiter &  12563.90  & 287.00  & 28.30  & 3.18  \\
+  S/2001\_J10 &  Jupiter &  18995.40  & 534.00  & 147.00  & 2.59  \\
+  S/2001\_J8 &  Jupiter &  20640.70  & 609.00  & 165.00  & 2.46  \\
+  S/2001\_J9 &  Jupiter &  20790.20  & 617.00  & 142.00  & 2.45  \\
+  S/2001\_J2 &  Jupiter &  20790.20  & 615.00  & 149.00  & 2.46  \\
+  Praxidike &  Jupiter &  20939.80  & 617.00  & 149.00  & 2.47  \\
+  S/2001\_J7 &  Jupiter &  20939.80  & 622.00  & 146.00  & 2.45  \\
+  Harpalyke &  Jupiter &  21089.40  & 625.00  & 149.00  & 2.45  \\
+  S/2001\_J3 &  Jupiter &  21388.50  & 630.00  & 150.00  & 2.47  \\
+  S/2001\_J6 &  Jupiter &  22884.20  & 715.00  & 165.00  & 2.33  \\
+  S/2001\_J4 &  Jupiter &  23332.90  & 713.00  & 150.00  & 2.38  \\
+  Chaldene &  Jupiter &  23332.90  & 734.00  & 165.00  & 2.31  \\
+  S/2001\_J11 &  Jupiter &  23332.90  & 736.00  & 166.00  & 2.30  \\
+  S/2001\_J5 &  Jupiter &  23482.50  & 732.00  & 155.00  & 2.33  \\
+  Pasiphae &  Jupiter &  23500.00  & 735.00  & 158.00  & 2.32  \\
+  S/2001\_J1 &  Jupiter &  23781.60  & 752.00  & 152.00  & 2.30  \\
+  Megaclite &  Jupiter &  23931.20  & 758.00  & 153.00  & 2.29  \\
+  Callirrhoe &  Jupiter &  24080.80  & 759.00  & 147.00  & 2.31  \\
+  Pan &  Saturn &  133.72  & 0.58  & 0.00  & 16.90  \\
+  Atlas &  Saturn &  137.60  & 0.60  & 0.00  & 16.61  \\
+  Prometheus &  Saturn &  139.25  & 0.61  & 0.00  & 16.51  \\
+  Pandora &  Saturn &  141.64  & 0.63  & 0.00  & 16.39  \\
+  Epimetheus &  Saturn &  149.57  & 0.69  & 0.69  & 15.67  \\
+  Janus &  Saturn &  151.07  & 0.70  & 0.14  & 15.80  \\
+  Mimas &  Saturn &  185.47  & 0.94  & 1.53  & 14.31  \\
+  Enceladus &  Saturn &  237.82  & 1.37  & 0.02  & 12.62  \\
+  Tethys &  Saturn &  293.16  & 1.88  & 1.09  & 11.33  \\
+  Telesto &  Saturn &  294.65  & 1.89  & 0.00  & 11.33  \\
+  Calypso &  Saturn &  296.15  & 1.90  & 0.00  & 11.33  \\
+  Dione &  Saturn &  376.92  & 2.74  & 0.02  & 10.00  \\
+  Helene &  Saturn &  378.41  & 2.75  & 0.02  & 10.00  \\
+  Rhea &  Saturn &  526.49  & 4.52  & 0.35  & 8.47  \\
+  Titan &  Saturn &  1046.99  & 15.90  & 0.33  & 4.79  \\
+  Hyperion &  Saturn &  1480.74  & 21.30  & 0.43  & 5.05  \\
+  Iapetus &  Saturn &  3559.77  & 79.30  & 14.72  & 3.26  \\
+  S/2000\_S5 &  Saturn &  11367.30  & 453.00  & 48.50  & 1.82  \\
+  S/2000\_S6 &  Saturn &  11442.10  & 454.00  & 49.20  & 1.83  \\
+  Phoebe &  Saturn &  12952.80  & 550.00  & 175.30  & 1.71  \\
+  S/2000\_S2 &  Saturn &  14957.00  & 683.00  & 47.10  & 1.59  \\
+  S/2000\_S8 &  Saturn &  15405.70  & 712.00  & 148.60  & 1.57  \\
+  S/2000\_S3 &  Saturn &  16602.30  & 804.00  & 48.60  & 1.50  \\
+  S/2000\_S12 &  Saturn &  17798.80  & 880.00  & 174.80  & 1.47  \\
+  S/2000\_S11 &  Saturn &  17873.60  & 888.00  & 34.90  & 1.46  \\
+  S/2000\_S4 &  Saturn &  17948.40  & 899.00  & 34.90  & 1.45  \\
+  S/2000\_S10 &  Saturn &  18098.00  & 906.00  & 33.50  & 1.45  \\
+  S/2000\_S9 &  Saturn &  18397.10  & 928.00  & 169.50  & 1.44  \\
+  S/2000\_S7 &  Saturn &  20341.50  & 1077.00  & 175.00  & 1.37  \\
+  S/2000\_S1 &  Saturn &  23332.90  & 1326.00  & 172.90  & 1.28  \\
+  Cordelia &  Uranus &  49.81  & 0.34  & 0.14  & 10.81  \\
+  Ophelia &  Uranus &  53.70  & 0.38  & 0.09  & 10.38  \\
+  Bianca &  Uranus &  59.08  & 0.44  & 0.16  & 9.87  \\
+  Cressida &  Uranus &  61.77  & 0.46  & 0.04  & 9.68  \\
+  Desdemona &  Uranus &  62.67  & 0.47  & 0.16  & 9.61  \\
+  Juliet &  Uranus &  64.32  & 0.49  & 0.06  & 9.48  \\
+  Portia &  Uranus &  66.11  & 0.51  & 0.09  & 9.37  \\
+  Rosalind &  Uranus &  69.85  & 0.56  & 0.28  & 9.10  \\
+  1986\_U10 &  Uranus &  74.93  & 0.62  & 0.00  & 8.74  \\
+  Belinda &  Uranus &  75.23  & 0.62  & 0.03  & 8.76  \\
+  Puck &  Uranus &  86.00  & 0.76  & 0.31  & 8.20  \\
+  Miranda &  Uranus &  129.68  & 1.41  & 4.22  & 6.68  \\
+  Ariel &  Uranus &  191.45  & 2.52  & 0.31  & 5.52  \\
+  Umbriel &  Uranus &  266.24  & 4.14  & 0.36  & 4.67  \\
+  Titania &  Uranus &  435.25  & 8.71  & 0.77  & 3.63  \\
+  Oberon &  Uranus &  590.80  & 13.50  & 0.10  & 3.18  \\
+  Caliban &  Uranus &  7164.40  & 581.00  & 139.60  & 0.90  \\
+  Stephano &  Uranus &  7912.25  & 672.00  & 141.60  & 0.86  \\
+  S/2001\_U1 &  Uranus &  8570.36  & 758.00  & 166.30  & 0.82  \\
+  Sycorax &  Uranus &  12204.90  & 1289.00  & 152.60  & 0.69  \\
+  Prospero &  Uranus &  16452.70  & 2009.00  & 146.30  & 0.60  \\
+  Naiad &  Neptun &  48.01  & 0.29  & 4.74  & 11.87  \\
+  Thalassa &  Neptun &  49.96  & 0.31  & 0.21  & 11.68  \\
+  Despina &  Neptun &  52.50  & 0.34  & 0.07  & 11.39  \\
+  Galatea &  Neptun &  61.92  & 0.43  & 0.05  & 10.49  \\
+  Larissa &  Neptun &  73.59  & 0.56  & 0.06  & 9.64  \\
+  Proteus &  Neptun &  117.56  & 1.12  & 0.04  & 7.63  \\
+  Triton &  Neptun &  354.48  & 5.88  & 157.40  & 4.38  \\
+  Nereid &  Neptun &  5519.13  & 360.00  & 27.60  & 1.11  \\
+\end{longtable}
+\end{document}

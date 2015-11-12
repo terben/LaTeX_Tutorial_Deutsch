@@ -1,0 +1,134 @@
+% Kommentierter Quelltext zu Video 15 des LaTeX Tutorials
+% von Thomas Erben
+%
+\documentclass[a4paper, 12pt]{scrartcl}
+
+% Hier werden einige Pakete eingebunden
+\usepackage[utf8]{inputenc}               % Direkte Eingabe von ä usw.
+\usepackage[T1]{fontenc}                  % Font Kodierung für die Ausgabe
+\usepackage[ngerman]{babel}               % Verschiedenste
+                                          % sprach-spezifische Extras
+\usepackage[autostyle=true]{csquotes}     % Intelligente Anführungszeichen
+
+\title{Der Hobbit}
+\author{John R.\,R.~Tolkien}
+\date{London, 1937}
+
+\begin{document}
+%
+%\maketitle
+%
+\section*{Vorwort}
+Das Datum ist das der englischen Erstausgabe. Der Text kommt natürlich
+aus der deutschen Übersetzung (\enquote{Der kleine Hobbit} erschienen
+1999 im dtv Verlag).
+%
+\section{Eine unvorhergesehene Gesellschaft}
+%
+\subsection*{Die Hobbithöhle}
+In einer Höhle in der Erde, da lebte ein \textbf{Hobbit}. 
+Nicht in einem schmutzigen, nassen Loch, 
+in das die Enden von irgendwelchen Würmern herabbaumelten 
+und das nach Schlamm und Moder roch. 
+Auch nicht etwa in einer trockenen Kieshöhle, die so kahl war, 
+dass man sich nicht einmal niedersetzen oder gemütlich frühstücken konnte. 
+Es war eine \underline{Hobbithöhle}, und das bedeutet Behaglichkeit.
+%
+\subsection*{Ein guter Morgen (?)}
+Alles, was also der keineswegs misstrauische Bilbo an diesem Morgen sah,
+war ein kleiner, alter Mann mit einem Stab, hohem, spitzem blauen Hut, 
+einem langen, grauen Mantel, mit einer silbernen Schärpe,  
+über die sein langer, silberner Bart hing, 
+ein kleiner, alter Mann mit riesigen schwarzen Schuhen.
+%
+\enquote{Guten Morgen}, sagte Bilbo, und er meinte es ehrlich. 
+Die Sonne schien, und das Gras war grün. 
+Aber Gandalf schaute ihn scharf unter seinen buschigen Augenbrauen hervor an.
+
+\enquote{Was meint Ihr damit?} fragte er. 
+\begin{itemize}
+  \item \enquote{\emph{Wünscht Ihr mir einen guten Morgen?}}
+
+  \item \enquote{\emph{Oder meint Ihr, dass dies ein guter Morgen
+        ist, gleichviel, ob ich es wünsche oder nicht?}}
+  \item \enquote{\emph{Meint Ihr, dass Euch der Morgen gut bekommt?}}
+  \item \enquote{\emph{Oder dass dies ein Morgen ist, an dem man gut
+        sein muss?}}
+\end{itemize}
+
+\enquote{Alles auf einmal}, sagte Bilbo. \enquote{Wie heißt Ihr
+  eigentlich?} fragte der Hobbit. \enquote{Ich bin Gandalf, und Gandalf,
+denkt nur, das bin ich!} antwortete der Zauberer.
+%
+\section{Die Zwerge}
+Mit dem Namen Gandalf fiel bei Bilbo der Groschen. Der Zauberer war
+früher oft zu Gast bei den Hobbits. Er hatte seinem Grossvater vor
+Ewigkeiten ein paar magische Diamantenklammern geschenkt und die
+Hobbits zur Sommersonnenwende stets mit beeindruckenden Feuerwerken
+erfreut. Nach einer We
+ile lud Bilbo den Zauberer für den nächsten Tag
+zum Tee ein und dieser verschwand so schnell wie er gekommen war.
+ 
+Bevor Gandalf am folgenden Nachmittag erschien, wurde der arme Hobbit
+von 13 ungebetenen Gästen, es waren Zwerge, heimgesucht. Ihre Namen
+finden sich, zusammen mit einigen Zusatzinformationen, in
+Tabelle~\ref{tab:zwerge}.
+% 
+% Die folgende Tabelle ist als Gleitobjekt realisiert. LaTeX bekommt
+% die Freiheit sie an eine günstige Stelle des Ausgabedokuments zu
+% platzieren.
+% Ein Tabellen Gleitobjekt hat folgende Elemente:
+%
+% - De eigentliche tabular Umgebung ist in eine table Umgebung
+%   eingebettet.
+% - Das Zentrieren der Tabelle geschieht durch einen \centering
+%   Befehl anstatt durch eine center Umgebung.
+% - Als Gleitobjekt hat die Tabelle eine Über- bzw. Unterschrift
+% - Wir benötigen auch ein label um die Tabelle im Text zu referenzieren.
+\begin{table}
+  \centering
+  % Die folgenden zwei Befehle erzeugen eine Tabellenüberschrift
+  \captionabove{Die dreizehn Zwerge}
+  \label{tab:zwerge}
+  \begin{tabular}{l||l|l|l|l|l}
+  Name   & Bart & Gürtel & Kapuze & Instrument & Sonstiges \\
+  \hline
+  Dwalin & blau & gold & dunkelgrün & Bratsche & \\
+  Balin & weiß & & purpurrot & Bratsche & \\
+  Kili & gelb & silber & blau & Fiedel & Werkzeug \\
+  Fili & gelb & silber & blau & Fiedel & Spaten \\
+  Dori & & gold & purpurrot & Flöte & \\
+  Nori & & gold & purpurrot & Flöte & \\
+  Ori & & gold & grau & Flöte & \\
+  Oin & & silber & braun & & \\
+  Gloin & & silber & silber & & \\
+  Bifur & & & gelb & Klarinette & \\
+  Bofur & & & gelb & Klarinette & \\
+  Bombur & & & blaßgrün & Trommel & fett \\
+  Thorin & & & himmelblau mit & Harfe & sehr berühmt \\
+         & & & silberner Schärpe & &
+  \end{tabular}
+  % Falls Sie eine Tabellenunterschrift bevorzugen kommentieren
+  % aktivieren Sie die zwei folgenden Zeilen und kommentieren Sie
+  % die entsprechenden Zeilen oben für die Überschrift aus:
+  %\caption{Die dreizehn Zwerge}
+  %\label{tab:zwerge}
+\end{table}
+%
+\section{Gebratenes Hammelfleisch}
+Als Bilbo am Morgen aufsteht, glaubt er, dass die Zwerge ohne ihn
+fortgegangen sind und war enttäuscht. Doch Gandalf klärt ihn auf.
+Bilbo beeilt sich, damit er noch rechtzeitig zum Treffpunkt kommen
+kann, wo die Zwerge bereits auf ihn warten.Bilbo, Gandalf und die
+Zwerge machen sich auf die Reise.Eines Abends machen sie eine Pause
+und bemerken, dass Gandalf verschwunden ist. In einem Wald entdecken
+sie ein Licht und die Zwerge schicken Bilbo, um es auszukundschaften.
+An der Feuerstelle, von der das Licht kommt, sitzen drei Trolle, die
+gerade dabei sind, Hammelfleisch zu braten. Als Bilbo versucht, die
+Geldbörse eines Trolls zu stehlen, wird er entdeckt und auch die
+Zwerge werden gefangen genommen. Doch bevor die Trolle sie verspeisen
+können, werden sie von Gandalf überlistet und vom Sonnenlicht bei
+Tagesanbruch in Steine verwandelt. Schließlich entdecken die Gefährten
+die Höhle der Trolle und nehmen alle Goldmünzen und Lebensmittel mit,
+die sie dort fanden.
+\end{document}
