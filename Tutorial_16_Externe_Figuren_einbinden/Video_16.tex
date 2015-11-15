@@ -1,0 +1,93 @@
+% Kommentierte Quelldatei zu Video_16 des LaTeX Tutorials
+% von Thomas Erben
+% (siehe https://www.youtube.com/channel/UCgaFgieXi6HIryaFyhhzQtg)
+
+\documentclass[12pt,a4paper]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}     % Zum Einbinden von Figuren nötig
+
+% Beachten Sie bei dem folgenden Befehl dass das Argument
+% 'figuren/' in ein zweites geschweiftes Klammernpaar
+% eingebunden ist. Auch der '/' am Ende von 'figuren'
+% ist wesentlich!
+\graphicspath{{figuren/}} % Figuren befinden sich im Verzeichnis
+                          % 'figuren' (Unterverzeichnis der
+                          % LaTeX Quelltexte.
+
+\begin{document}
+%
+\section{Trigonometrische Funktionen}
+Die folgenden Sätze über Sinus und Cosinus stammen hauptsächlich
+von Wikipedia.
+
+Sinus- und Cosinusfunktion sind elementare mathematische Funktionen.
+Vor Tangens und Cotangens bilden sie die wichtigsten trigonometrischen
+Funktionen. Sinus und Cosinus werden unter anderem in der Geometrie
+für Dreiecksberechnungen in der ebenen und sphärischen Trigonometrie
+benötigt. Auch in der Analysis sind sie wichtig. Wellen wie
+Schallwellen, Wasserwellen und elektromagnetische Wellen lassen sich
+als aus Sinus- und Cosinuswellen zusammengesetzt beschreiben, sodass
+die Funktionen auch in der Physik als harmonische Schwingungen
+allgegenwärtig sind. Tangens und Cotangens sind als Quotienten von
+Sinus und Cosinus definiert und spielen eine ähnlich wichtige Rolle
+wie Sinus und Cosinus. Alle vier Funktionen sind in
+Abbildung~\ref{fig:trigo_funk} im Bereich $x\in[0, 2\pi]$ dargestellt.
+%
+\begin{figure}[ht]
+  \centering
+%  \includegraphics{trigo_funktionen}
+  %  Die Breite der Figur wird auf 0.9 der LaTeX-Textbreite skaliert.
+  %  Die Höhe wird automatisch so mitskaliert dass das ursprüngliche
+  %  Achsenverhältnis der Figur erhalten bleibt!
+  \includegraphics[width=0.9\textwidth]{trigo_funktionen}
+  \caption{Trigonometrische Funktionen: Gezeigt sind die Sinusfunktion
+    (oben links), die Cosinusfunktion (oben rechts), der Tangens
+    (unten links) und der Cotangens (unten rechts).}
+  \label{fig:trigo_funk}
+\end{figure}
+%
+\section{Kreis und Quadrat}
+Ein Kreis ist eine ebene geometrische Figur. Er wird definiert als die
+Menge aller Punkte einer Ebene, die einen konstanten Abstand zu einem
+vorgegebenen Punkt dieser Ebene (dem Mittelpunkt) haben. Der Abstand
+der Kreispunkte zum Mittelpunkt ist der Radius oder Halbmesser des
+Kreises, er ist eine positive reelle Zahl. Der Kreis gehört zu den
+klassischen und grundlegenden Objekten der euklidischen Geometrie.
+
+In der Geometrie ist ein Quadrat (veraltet auch Geviert) ein
+spezielles Polygon, nämlich ein ebenes, konvexes und regelmäßiges
+Viereck.
+
+Kreis und Quadrat sind in Abbildung~\ref{fig:kreis_quadrat_korrekt}
+\emph{korrekt} dargestellt. In
+Abbildung~\ref{fig:kreis_quadrat_falsch} hingegen wurde die Figur in
+beiden Achsen fälschlicherweise skaliert sodass der Kreis als Ellipse
+und das Quadrat als Rechteck erscheint.
+%
+\begin{figure}[ht]
+  \centering
+  % Wir fassen zwei Figuren zu einer zusammen. Damit so nebeneinander
+  % gesetzt werden darf die Gesamtbreite der Figuren '\textwidth'
+  % nicht überschreiten.
+  \includegraphics[width=0.45\textwidth]{kreis}
+  \includegraphics[width=0.45\textwidth]{quadrat}
+  \caption{Kreis (links) und Quadrat(rechts) mit korrekter Skalierung}
+  \label{fig:kreis_quadrat_korrekt}
+\end{figure}
+%
+\begin{figure}[ht]
+  \centering
+  % Hier werden Breite und Höhe der Figuren vorgeschrieben. Dadurch
+  % verändert sich das ursprüngliche Achsenverhältnis der Figuren was
+  % eigentlich immer unerwünscht ist!
+  \includegraphics[width=0.45\textwidth,height=0.2\textheight]{kreis}
+  \includegraphics[width=0.45\textwidth,height=0.2\textheight]{quadrat}
+  \caption{Kreis (links) und Quadrat(rechts) mit falscher Skalierung}
+  \label{fig:kreis_quadrat_falsch}
+\end{figure}
+
+\end{document}
