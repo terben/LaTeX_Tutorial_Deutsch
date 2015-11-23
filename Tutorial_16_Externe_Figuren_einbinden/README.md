@@ -2,5 +2,5 @@
 
 - Die Datei *Video_16.tex* enthält eine erweiterte, kommentierte Version des Quelltextes aus dem Video
 
-- Die Datei *Video_16.pdf* enthält die PDF LaTeX-Ausgabe der Datei *Video_15.tex*. 
+- Die Datei *Video_16.pdf* enthält die PDF LaTeX-Ausgabe der Datei *Video_16.tex*. 
 
