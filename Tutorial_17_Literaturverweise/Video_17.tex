@@ -1,0 +1,42 @@
+% Eine dokumentierte Version der Video Datei zum siebzehnten
+% Teil des LaTeX Tutorials.
+
+% Die Option 'bibtotoc' in den Optionen der Dokumentklasse
+% sorgt dafür dass das Literaturverzeichnis im Inhaltsverzeichnis
+% erscheint.
+\documentclass[12pt,a4paper,bibtotoc]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+
+% Das Paket biblatex ist für Literaturverweise zuständig.
+\usepackage[backend=biber,
+              % Wir benuten biber für Literaturverzeichnisse
+              % Ohne diese Optionen werden Literaturdatenbanken
+              % im utf-8 Format nicht korrekt behandelt.
+            style=alphabetic % Zitierstil
+           ]{biblatex}
+
+% Das Literaturdatenbankfile (hier 'literatur.bib') muss
+% sich im selben Verzeichnis wie das LaTeX Dokument befinden.
+\addbibresource{literatur.bib}
+
+\begin{document}
+%
+\tableofcontents
+\section{Literaturzitate}
+% Literaturverweise werden durch den Befehl 'cite' und die
+% Zeichenkette, die das zu zitierende Dokument markiert, gesetzt.
+% Die Zeichenkette ist identisch zu der im Literaturdatenbankfile.
+Studienanfänger der Physik benutzen oft \cite{gerthsen2013physik} als
+Einführungstext in die Experimentalphysik. Für \LaTeX{} verwenden wir
+den Onlinetext \cite{daniel2015l2lurz}. Während oder nach der
+Masterarbeit schreiben wir vielleicht auch mal eine Veröffentlichung
+wie hier in \cite{heymans2006shear}.
+%
+% Setzen Sie den 'printbibliography' Befehl an die Stelle wo
+% Sie das Literaturverzeichnis im Ausgabedokument sehen wollen.
+\printbibliography
+\end{document}
