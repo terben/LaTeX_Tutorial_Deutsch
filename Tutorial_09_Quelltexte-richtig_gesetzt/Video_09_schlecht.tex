@@ -1,0 +1,31 @@
+% Die 'schlechte' Quelltextversion der Video Datei zum neunten
+% Teil des LaTeX Tutorials.
+
+% Diese Version und die in 'Video_09.tex' produzieren
+% 'exakt' denselben Ausgabetext!
+\documentclass[11pt,a4paper]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+
+\begin{document} \section{Quelltextformate}
+Hier ist    ein wenig \LaTeX{}
+Text um
+  Quelltextformatierungen
+zu  demonstrieren.
+\begin{itemize} \item Erster Punkt
+\begin{enumerate} \item Erster Unterpunkt
+\item Zweiter Unterpunkt
+\end{enumerate} \item Zweiter Punkt
+\end{itemize}
+Hier Text zwischen itemize und tabular Umgebung.
+
+\begin{center}\begin{tabular}{|c|c|c|}
+Thomas & Erben & Bonn \\ Michael & Meier &
+Stuttgart \\
+\end{tabular}\end{center}
+\section{Neuer Abschnitt} Hier mehr Text
+in einem weiterem Abschnitt.
+\end{document}
