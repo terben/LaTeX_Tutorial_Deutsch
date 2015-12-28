@@ -1,0 +1,74 @@
+% Eine kommentierte Version der Video Datei zum
+% 14. Teil des YouTube LaTeX Tutorials
+% (siehe https://www.youtube.com/channel/UCgaFgieXi6HIryaFyhhzQtg)
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Das Paket 'blindtext' dient zur einfachen
+% Erstellung längeren 'Dummy' Textes.
+\usepackage{blindtext}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% 'newcommand' Definitionen zur Vereinfachung
+% von Verweisungsbefehlen (ref-Befehle):
+\newcommand{\sectionref}[1]{Abschnitt~\ref{#1}}
+\newcommand{\subsectionref}[1]{Unterabschnitt~\ref{#1}}
+
+% Beachte dass das Paket amsmath einen Befehl '\eqref'
+% definiert. Dieser Befehl schreibt die Referenznummer
+% in Klammern aber ohne den Text "Gl." zu setzen.
+\newcommand{\equationref}[1]{Gl.~(\ref{#1})}
+
+
+\begin{document}
+%
+\tableofcontents
+%
+\section{Vorwort}
+Hier ist ein Vorwort.
+%
+\section{Dummy Text}
+\label{sec:dummy}
+%
+% Beachten Sie das Verweisen mit direkten '\ref'-Befehlen
+% (samt notwendigem Text auf das Objekt auf welches verwiesen\
+% werden soll) und den einfacheren Versionen mit obigen,
+% durch 'newcommand' definierte Befehle:
+Zusammenhänge zwischen Masse, Energie und Beschleunigung werden anhand
+Gl.~(\ref{eq:einstein}) und \equationref{eq:newton}
+in \sectionref{sec:mathe} diskutiert. Hier zunächst ein wenig
+\emph{dummy} Text:
+ 
+\blindtext[3]
+%.
+\section{Sinnvolle Mathematik}
+\label{sec:mathe}
+%
+Nach etwas sinnlosem Text in Abschnitt~\ref{sec:dummy} hier nun etwas
+sinnvolles. In \subsectionref{subsec:nochmal_dummy} geht es dann
+wieder mit \emph{Dummy}-Text weiter. Zwischen Masse $m$ und Energie
+$E$ besteht nach Einstein der Zusammenhang:
+%
+\begin{equation}
+  \label{eq:einstein}
+  E=mc^{2}
+\end{equation}
+Laut Newton ist die Kraft $\vec{F}$ proportional zur Beschleunigung
+$\vec{a}$:
+%
+\begin{equation}
+  \label{eq:newton}
+  \vec{F}=m\vec{a}.
+\end{equation}
+%
+\subsection{Wieder nur Dummy ....}
+\label{subsec:nochmal_dummy}
+%
+\blindtext
+%
+\end{document}
