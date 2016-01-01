@@ -1,0 +1,47 @@
+% Eine dokumentierte Version der Video Datei zum achzehnten
+% Teil des LaTeX Tutorials.
+
+\documentclass[12pt,a4paper,bibtotoc]{scrreprt}
+
+% Alle meine üblichen Paketdefinitionen lade ich
+% mit 'input' hinzu:
+\input{my_packages_german}
+
+% Meine Definitionen neuer LaTeX Kommandos:
+\input{my_newcommands_german}
+
+% Titel und Autor:
+\title{Ein größeres Dokument}
+\author{Thomas Erben}
+\date{\today}
+
+% Sie können nur bestimmte Kapitel mit 'includeonly'
+% kompilieren:
+%\includeonly{Kapitel_Hobbit}
+
+% Man kann auch mehrere Kapitel via 'includeonly'
+% einbinden:
+%\includeonly{Kapitel_Hobbit,Kapitel_Mathematik}
+
+\begin{document}
+%
+\maketitle
+%
+\tableofcontents
+%
+% Man beachte dass in der Ausgabe vor jedem
+% 'include' eine neue Seite angefangen wird.
+% Wenn man sein Dokument nach Kapiteln aufspaltet
+% faellt dies nicht auf da auch Kapitel auf neue
+% Seiten gesetzt werden.
+%
+\include{Kapitel_Einfuehrung}
+%
+\include{Kapitel_LaTeX_Elemente}
+%
+\include{Kapitel_Hobbit}
+%
+\include{Kapitel_Mathematik}
+%
+\printbibliography
+\end{document}
