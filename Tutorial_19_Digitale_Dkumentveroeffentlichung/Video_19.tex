@@ -1,0 +1,40 @@
+% Dokumentierte Demonstrationsdatei für Tutorial 19
+% des YouTube LaTeX-Tutorials.
+% Die Hauptkommentare, spezifisch für dieses Tutorial
+% befinden sich in der Datei 'my_packages_german.tex'
+%
+\documentclass[12pt,a4paper,bibtotoc]{scrreprt}
+
+% Alle meine üblichen Paketdefinitionen lade ich
+% mit 'input' hinzu:
+\input{my_packages_german}
+
+% Meine Definitionen neuer LaTeX Kommandos:
+\input{my_newcommands_german}
+
+% Titel und Autor:
+\title{Ein größeres Dokument}
+\author{Thomas Erben}
+\date{\today}
+
+\begin{document}
+%
+% Erstelle einen PDF-Book,ark für die Titelseite:
+\pdfbookmark[0]{Titelseite}{Titelseite}
+\maketitle
+%
+% Erstelle einen PDF-Book,ark für die Seite mit
+% dem Inhaltsverzeichnis:
+\pdfbookmark[0]{Inhaltsverzeichnis}{Inhaltsverzeichnis}
+\tableofcontents
+%
+\include{Kapitel_Einfuehrung}
+%
+\include{Kapitel_LaTeX_Elemente}
+%
+\include{Kapitel_Hobbit}
+%
+\include{Kapitel_Mathematik}
+%
+\printbibliography
+\end{document}
