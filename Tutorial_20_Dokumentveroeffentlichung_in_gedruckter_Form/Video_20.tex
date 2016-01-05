@@ -1,0 +1,56 @@
+% Eine erweiterte, dokumentierte Version der LaTeX-Datei
+% aus Teil 20 des Video LaTeX-Tutorials
+% (siehe https://www.youtube.com/channel/UCgaFgieXi6HIryaFyhhzQtg)
+%
+\documentclass[
+  12pt,
+  a4paper,
+  bibtotoc,
+  twoside,     % Dokument für zweiseitigen
+               % Druck optimieren
+  openright,   % Wesentliche Textelemente
+               % auf einer 'rechten Seite'
+               % anfangen.
+]{scrreprt}
+
+% Alle meine üblichen Paketdefinitionen lade ich
+% mit 'input' hinzu:
+\input{my_packages_german}
+
+% Meine Definitionen neuer LaTeX Kommandos:
+\input{my_newcommands_german}
+
+% Titel und Autor:
+\title{Ein größeres doppelseitiges Dokument}
+\author{Thomas Erben}
+\date{\today}
+
+\begin{document}
+%
+\maketitle
+%
+\tableofcontents
+% Beachten Sie dass Sie für Abbildungs- und Tabellenverzeichnisse
+% in den Captions einen 'Kurztitel' der Tabelle/Figur
+% angeben müßen:
+\listoffigures    % Abbildungsverzeichnis
+                  % erstellen
+\listoftables     % Tabellenverzeichnis
+                  % erstellen
+%
+\include{Kapitel_Einfuehrung}
+%
+\include{Kapitel_LaTeX_Elemente}
+%
+\include{Kapitel_Hobbit}
+%
+\include{Kapitel_Mathematik}
+%
+\printbibliography
+%
+% \appendix leitet einen Dokumentanhang ein:
+\appendix
+% Kapitel und Abschnitte nach einem Appendix
+% Befehl erscheinen automatisch im Dokumentanhang:
+\include{Anhang_Dummy}
+\end{document}

@@ -1,0 +1,39 @@
+% Paketdefinitionen für deutsche LaTeX Dokumente
+
+% Pakete um deutsche Texte in LaTeX zu setzen:
+\usepackage[ngerman]{babel} % Wir setzen einen deutschen Text
+                            % in neuer deutscher Rechtschreibung
+\usepackage[utf8]{inputenc} % Eingabetext ist im UTF-8 Format)
+                            % kodiert
+\usepackage[T1]{fontenc} % Korrektes Ausgabeencoding
+                         % für deutsche Sonderzeichen 
+\usepackage{csquotes} % korrekte Anführungsstricke in
+                      % deutschen Texten
+
+% Pakete für den Mathematikmodus:
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}  % Zum Setzen von Einheiten
+\sisetup{locale = DE} % Wir wollen Zahen/Einheiten nach
+                      % deutschen Regeln setzen.
+                      % siunitx nimmt leider nicht
+                      % direkt die babel Spracheinstellung
+
+% Figuren speichern wir immer in einem Unterordner
+% 'figuren' unter unseren LaTeX Dokumenten
+\usepackage{graphicx}
+\graphicspath{{figuren/}}
+
+% Das Paket biblatex ist für Literaturverweise zuständig.
+\usepackage[backend=biber,   
+            style=alphabetic % alphabetischer Zitierstil
+           ]{biblatex}
+
+% Literaturdatenbank:
+\addbibresource{literatur.bib}
+
+% Sonstiges:
+
+% Das Paket xspace sorgt für 'intelligente' Leerzeichnsetzung
+% nach einem LaTeX Makro - siehe auch Datei my_newcommands_german.tex
+\usepackage{xspace}

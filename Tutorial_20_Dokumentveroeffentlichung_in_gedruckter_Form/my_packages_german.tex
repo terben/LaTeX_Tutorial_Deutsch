@@ -1,0 +1,61 @@
+% Paketdefinitionen für deutsche LaTeX Dokumente
+
+% Pakete um deutsche Texte in LaTeX zu setzen:
+
+% Wir setzen einen Text in neuer deutscher
+% Rechtschreibung:
+\usepackage[ngerman]{babel} 
+% Eingabetext ist im utf-8 Format:
+\usepackage[utf8]{inputenc} 
+% Korrektes Ausgabeencoding für deutsche
+% Umlaute:
+\usepackage[T1]{fontenc} 
+% Korrekte Anführungsstriche in deutschen Texten: 
+\usepackage{csquotes} 
+
+% Pakete für den Mathematikmodus:
+\usepackage{amsmath}
+\usepackage{amssymb}
+% Zum Setzen von Einheiten
+\usepackage{siunitx} 
+% Wir wollen Zahlen/Einheiten nach
+% deutschen Regeln setzen. siunitx nimmt
+% leider nicht direkt die babel Spracheinstellung
+\sisetup{locale = DE} 
+
+% Figuren speichern wir immer in einem Unterordner
+% 'figuren' unter unseren LaTeX Dokumenten
+\usepackage{graphicx}
+\graphicspath{{figuren/}}
+
+% Das Paket biblatex ist für Literaturverweise
+% zuständig.
+\usepackage[backend=biber,   
+            style=alphabetic % alphabetischer Zitierstil
+           ]{biblatex}
+           
+% Meine Literaturdatenbank:
+\addbibresource{literatur.bib}
+
+% Sonstiges:
+
+% Das Paket xspace sorgt für 'intelligente'
+% Leerzeichnsetzung nach einem LaTeX Makro.
+% siehe auch Datei my_newcommands_german.tex
+\usepackage{xspace}
+
+% Hin und wieder benötige ich ein wenig Dummy
+% Text zum Vorführen wie hier in den Videos:
+\usepackage{blindtext}
+
+% Das Paket fancyhdr (fancyheaders) erlaubt eine
+% umfangreiche Konfiguration von Dokument Kopf-
+% und Fusszeilen:
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+
+% Beachten Sie dass für ein gedrucktes Dokument
+% PDF-Links wenig Sinn machen! Daher erscheinen
+% in dieser Version keine hyperref Befehle!
