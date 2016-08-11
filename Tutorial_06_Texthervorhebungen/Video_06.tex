@@ -1,0 +1,43 @@
+% Eine dokumentierte Version der LaTeX Datei von
+% Teil sechs des LaTeX Video Tutorials
+% (siehe https://youtu.be/Eyo8cPaENLc)
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage[ngerman]{babel}   % Deutsche Einstellungen
+\usepackage[utf8]{inputenc}   % utf-8 Eingabe
+\usepackage[T1]{fontenc}      % Korrekte Ausgabefonts im
+                              % Ausgabedokument
+\usepackage{csquotes}         % Setzen von Anführungsstrichen
+
+\begin{document}
+%
+\section{Texthervorhebungen}
+% Texthervorhebungen oder Änderungen von Textfonts werden in LaTeX
+% durch LaTeX-Befehle realisiert. Texte, die hervorgehoben werden
+% sollen, werden innerhalb geschweifter Klammern nach einem
+% entsprechenden Befehl geschrieben:
+%
+Windows und Linux sind gute Betriebssysteme. \\
+% Der Befehl '\emph' hebt Text hervor. "Wie" Text in einem gegebenem
+% Kontext hervorgehoben wird, wird von LaTeX selber bestimmt. Hier wird
+% der Text kursiv geschrieben.
+%
+Windows und Linux sind \emph{gute} Betriebssysteme.  \\
+% Der Befehl '\textbf' druckt Text fett.
+%
+Windows und Linux sind \textbf{gute} Betriebssysteme.  \\
+%
+% \texttt setzt Text in nicht-proportionaler Schreibmaschinenschrift.
+% LaTeX-Befehle können auch ineinander geschachtelt werden um ihren
+% Effekt auf Text zu kombinieren:
+\texttt{Windows} und \texttt{Linux} sind \emph{\textbf{gute}}
+Betriebssysteme.  \\
+%
+\section{Anführungsstriche}
+% Texte in wörtlicher Rede werden in LaTeX mit dem Befehl '\enquote'
+% gesetzt (zweiter Satz). Vermeiden Sie das Setzen von wörtlicher Rede
+% mit einfachen 'Hochkommas'! Dies ist schlichtweg falsch!
+%
+Thomas sagte "Guten Morgen". \\        % So bitte nicht!
+Thomas sagte \enquote{Guten Morgen}.   % So ist es richtig!
+\end{document}
