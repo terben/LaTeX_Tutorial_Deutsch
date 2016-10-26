@@ -1,0 +1,37 @@
+% Die Datei enthält die in Video 08 des LaTeX-Tutorials
+% (siehe https://www.youtube.com/watch?v=UPBjKhmMBuQ)
+% gezeigten einfachen Tabellen.
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage[ngerman]{babel}   % Deutsche Einstellungen
+\usepackage[utf8]{inputenc}   % utf-8 Eingabe
+\usepackage[T1]{fontenc}      % Korrekte Ausgabefonts im Ausgabedokument
+\usepackage{csquotes}         % Setzen von Anführungsstrichen
+
+\begin{document}
+%
+\section{Tabellen}
+Hier eine \LaTeX-Tabelle:
+%
+% Die center-Umgebung sorgt dafür, dass die eingebettete
+% Tabelle zentral, abgesetzt vom Text, erscheint:
+\begin{center}
+  \begin{tabular}{|r|c|l||}
+    rechtsbündig & zentriert & linksbündig \\
+    \hline
+    r            & c           & l \\
+    rr           & cc          & ll \\
+    rrr          & ccc         & lll \\
+  \end{tabular}
+\end{center}
+Hier noch ein wenig Text nach der Tabelle.
+%
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+  Name & Vorname & Beruf & Wohnort \\
+  \hline
+  Erben & Thomas & Astronom & Bonn  \\
+  Michael & Meier & & Stuttgart  \\
+  \end{tabular}
+\end{center}
+\end{document}
