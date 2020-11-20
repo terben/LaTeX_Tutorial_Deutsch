@@ -4,24 +4,24 @@
 
 % Wir setzen einen Text in neuer deutscher
 % Rechtschreibung:
-\usepackage[ngerman]{babel} 
+\usepackage[ngerman]{babel}
 % Eingabetext ist im utf-8 Format:
-\usepackage[utf8]{inputenc} 
+\usepackage[utf8]{inputenc}
 % Korrektes Ausgabeencoding für deutsche
 % Umlaute:
-\usepackage[T1]{fontenc} 
-% Korrekte Anführungsstriche in deutschen Texten: 
-\usepackage{csquotes} 
+\usepackage[T1]{fontenc}
+% Korrekte Anführungsstriche in deutschen Texten:
+\usepackage{csquotes}
 
 % Pakete für den Mathematikmodus:
 \usepackage{amsmath}
 \usepackage{amssymb}
 % Zum Setzen von Einheiten
-\usepackage{siunitx} 
+\usepackage{siunitx}
 % Wir wollen Zahlen/Einheiten nach
 % deutschen Regeln setzen. siunitx nimmt
 % leider nicht direkt die babel Spracheinstellung
-\sisetup{locale = DE} 
+\sisetup{locale = DE}
 
 % Figuren speichern wir immer in einem Unterordner
 % 'figuren' unter unseren LaTeX Dokumenten
@@ -30,10 +30,10 @@
 
 % Das Paket biblatex ist für Literaturverweise
 % zuständig.
-\usepackage[backend=biber,   
+\usepackage[backend=biber,
             style=alphabetic % alphabetischer Zitierstil
            ]{biblatex}
-           
+
 % Meine Literaturdatenbank:
 \addbibresource{literatur.bib}
 
@@ -57,14 +57,14 @@
 % Man beachte:
 % - hyperref muss nahe am Ende aller Paketdefinitionen
 %   stehen. Befragen Sie ggf. die Dokumentation
-%   von hyperref um zu sehen welche Pakete 'nach'
+%   von hyperref, um zu sehen, welche Pakete 'nach'
 %   hyoerref stehen müßen!
-% - Löschen Sie alle alteb LaTeX-Hilfsdateien bevor
+% - Löschen Sie alle alten LaTeX-Hilfsdateien, bevor
 %   Sie ein Dokument mit hyperref übersetzen!
 \usepackage{hyperref}
 \hypersetup{
   pdfstartview=FitH,        % PDF Dokument so in den PDF Betrachter
-                            % laden dass das PDF-Betrachter Fenster
+                            % laden, dass das PDF-Betrachter Fenster
                             % horizontal ausgefüllt wird
   pdfauthor={Thomas Erben}, % Autor des PDF-Dokuments (für PDF Metadaten)
   pdftitle={Unser Dokument} % Titel des PDF-Dokuemnts (für PDF Metadaten)
